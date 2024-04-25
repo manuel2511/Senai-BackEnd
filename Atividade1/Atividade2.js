@@ -1,27 +1,90 @@
+const readlineSync = require('readline-sync');
 // 1) Crie um programa que gera e escreve os números ímpares
 // entre 0 e 50. No início da 30a iteração o sistema deve sair do
 // laço de repetição.
+
+// let contador = 0;
+// for (let i = 0; i <= 50; i++) {
+//   if (i % 2 != 0) {
+//       if (contador > 30) {
+//           break;
+//         }
+//         console.log(`Numero impar ${i}`);
+//     }
+//   contador++;
+// }
+
 // 2) Crie um programa que gera e escreve os números pares entre
 // 0 e 50. No início da 30a iteração o sistema deve pular o laço
 // de repetição.
+
+// let contador = 0;
+// for (let i = 0; i <= 50; i++) {
+//   if (i % 2 == 0) {
+//       if (contador > 30) {
+//           break;
+//         }
+//         console.log(`Numero Par ${i}`);
+//     }
+//   contador++;
+// }
+
 // 3) Crie um programa para receber um número qualquer e
 // exibir no console se é par ou ímpar.
+
+// let numero = parseInt(readlineSync.question(`Digite um número: `));
+// let valor = "";
+// if (numero % 2 == 0) {
+//   valor = "Par";
+// } else {
+//   valor = "Impar";
+// }
+// console.log(`O número ${numero},ele é ${valor}`);
+
 // 4) Crie um programa que leia um valor inicial A e exiba a
 // sequência de valores do cálculo de A! e o seu resultado.
 // Ex: 5! = 5 X 4 X 3 X 2 X 1 = 120
 
+// let numero = parseInt(readlineSync.question(`Digite um número: `));
+// let total = 1;
+// for (let i = numero; i > 1; i--) {
+//   total = total * i;  
+// }
+// console.log(total);
+
 // 5) Crie um programa que efetue a soma de todos os números
 // ímpares que são múltiplos de três e que se encontram no
 // conjunto dos números de 1 até 100.
+// let contador = 0;
+// for (let i = 3; i <=100; i=i+3) {
+//   if (i % 2 !=0) {
+//     contador++;
+//   }
+//   console.log(i);
+// }
+// console.log(`A quantidade de números impares multiplos de 3 são: ${contador}`);
 
 // 6) Crie um programa que leia os valores A, B, C e exiba no
 // console os números ordenados em ordem crescente e
 // depois em ordem decrescente.
+
+
+
 // 7) Crie um programa que leia dois valores inteiros A e B se os
 // valores forem iguais deverá se somar os dois, caso contrário
 // multiplique A por B. Ao final de qualquer um dos cálculos
 // deve-se atribuir o resultado para uma variável C e mostrar
 // seu conteúdo no console.
+
+// let numeroA = parseInt(readlineSync.question(`Digite um número A: `));
+// let numeroB = parseInt(readlineSync.question(`Digite um número B: `));
+// let numeroC = 0;
+// if (numeroA === numeroB) {
+//   numeroC = numeroA+numeroB;
+// } else {
+//   numeroC = numeroA * numeroB;
+// }
+// console.log("Resultado da variável C é: "+ numeroC);
 
 // 8) Crie um programa que leia os dados de um aluno: nome,
 // matrícula, disciplina, nota. Se a nota do aluno for maior ou
@@ -30,6 +93,26 @@
 // console “Em recuperação” e se a nota do aluno for menor
 // que 50 exiba no console “Reprovado”.
 
+// let aluno = {
+//   nome : "",
+//   matricula : "",
+//   diciplina : "",
+//   nota : ""
+// }
+// aluno.nome = readlineSync.question(`Digite o nome do aluno: `);
+// aluno.matricula = parseInt(readlineSync.question(`Digite um número da matricula: `));
+// aluno.diciplina = readlineSync.question(`Digite o nome da diciplina: `);
+// aluno.nota = parseInt(readlineSync.question(`Digite a nota do aluno: `));
+
+// if (aluno.nota >= 60) {
+//   console.log(`Aluno ${aluno.nome}, Aprovado`);
+// } else if (aluno.nota < 50)  {
+//   console.log(`Aluno ${aluno.nome}, Reprovado`);
+// }else{
+//   console.log(`Aluno ${aluno.nome}, Recuperação`);
+// }
+
+
 // 9) Crie um programa que leia a idade de 10 pessoas, exibindo
 // ao final do programa:
 // - Qual é a média de idade do grupo
@@ -37,6 +120,34 @@
 // - Quantas pessoas tem menos de 10 anos
 // - Qual foi a maior idade lida
 // - Qual foi a menor idade lida
+
+// const quantidadeDePessoas = 10;
+// let soma = 0;
+// let maiorIdade = 0;
+// let maior20anos = 0;
+// let menor10anos = 0;
+// let menorIdade = 0;
+// for (let i = 0; i < quantidadeDePessoas; i++) {
+//   let idade = parseInt(readlineSync.question(`Digite a idade da ${i + 1}° pessoa : `));
+//   soma = soma + idade;
+//   if (idade >= 18) {
+//       maiorIdade++;
+//       if ( idade >= 20){
+//         maior20anos++;
+//       }
+//   } else {
+//     menorIdade++ ;
+//     if ( idade <= 10){
+//       menor10anos++;
+//     }
+//   }
+// }
+// console.log(`A média de idade é: ${soma / quantidadeDePessoas},
+//                     ${maior20anos} são maiores de 20 anos,
+//                     ${menor10anos} são menores de 10 anos,
+//                     ${maiorIdade} são maiores de idade,
+//                     ${menorIdade} são menores de idade.
+//                     `);
 
 // 10) Faça um programa que leia a largura e o comprimento de um terreno
 // retangular, calculando e mostrando a sua área em m2 (largura x

@@ -157,6 +157,18 @@ const readlineSync = require('readline-sync');
 // - Entre 100m2 e 500m2 = TERRENO MASTER
 // - Acima de 500m2 = TERRENO VIP
 
+// let largura = parseInt(readlineSync.question(`Digita largura do terreno: `));
+// let comprimento = parseInt(readlineSync.question(`Digita comprimento do terreno: `));
+// let areaDoTerreno = largura * comprimento;
+// if (areaDoTerreno > 500 ) {
+//   console.log(`TERRENO VIP sua dimensão é ${areaDoTerreno}m² `);
+// } else if (areaDoTerreno < 100) {
+//   console.log(`TERRENO POPULAR sua dimensão é ${areaDoTerreno}m² `);
+// } else {
+//   console.log(`TERRENO MASTER sua dimensão é ${areaDoTerreno}m² `  );
+// }
+
+
 // 11) Crie um programa que calcule o que deve ser pago por um produto,
 // considerando o preço normal de etiqueta e a escolha da condição de
 // pagamento. Utilize os códigos da tabela a seguir para ler qual a
@@ -167,13 +179,71 @@ const readlineSync = require('readline-sync');
 // 3 – Em duas vezes, preço normal de etiqueta sem juros
 // 4 – Em duas vezes, preço normal de etiqueta mais juros de 10%
 
+// let valorProduto = parseFloat(readlineSync.question(`Digita o Valor do Produto: `));
+// let condicaoPagamento = parseInt(readlineSync.question(`Informe a condição de pagamento: `));
+// switch (condicaoPagamento) {
+//   case 1:
+//     valorProduto = valorProduto * 0.90;
+//     break;
+//   case 2:
+//     valorProduto = valorProduto * 0.85;
+//     break;
+//   case 3:
+//     valorProduto = valorProduto;
+//     break;
+//   case 4:
+//     valorProduto = valorProduto * 1.10;
+//     break;
+
+//   default:
+//     console.log("Condição inválida");
+//     break;
+// }
+// console.log(`O valor do é: ${valorProduto}, devido a condição de pagamento ${condicaoPagamento}`);
+
+
 // 12) Tendo como dados de entrada a altura e o sexo de uma pessoa, crie um
 // programa que calcule seu peso ideal, utilizando as seguintes fórmulas:
 // para homens: (72.7 * h) - 58; para mulheres: (62.1 * h) - 44.7.
+
+// let altura = parseFloat(readlineSync.question(`Digita sua altura: `));
+// let sexo = readlineSync.question(`Informe "F"- Feminino e "M" - Masculino : `);
+// let pessoIdeal = 0;
+// if (sexo === "F") {
+//   pessoIdeal = (62.1 * altura) - 44.7;
+// } else {
+//   pessoIdeal = (72.7 * altura) - 58; 
+// }
+// console.log(`O Peso ideal para a altura de ${altura} e ${pessoIdeal}`);
+
 // 13) Tendo como dados de entrada dois valores numéricos digitados pelo
 // usuário, crie um programa para uma calculadora com as seguintes
 // operações: soma, subtração, multiplicação e divisão. Após a escolha da
 // operação exiba no console o resultado.
+
+// let valor1 = parseInt(readlineSync.question(`Digita primeiro valor: `));
+// let valor2 = parseInt(readlineSync.question(`Digita o segundo valor: `));
+// let operacao = parseInt(readlineSync.question(`Digita a operação: 1 - adição, 2 - subtração, 3 - Multiplicação e 4 - Divisão `));
+// switch (operacao) {
+//   case 1:
+//       console.log(`A Soma dos dois números é: ${valor1 + valor2}`);
+//     break;
+//   case 2:
+//       console.log(`A Subitração dos dois números é: ${valor1 - valor2}`);
+//     break;
+//   case 3:
+//       console.log(`A Multiplicação dos dois números é: ${valor1 * valor2}`);
+//     break;
+//   case 4:
+//       console.log(`A Divisão dos dois números é: ${valor1 / valor2}`);
+//     break;
+
+//   default:
+//     console.log("Operação inválida!");
+//     break;
+// }
+
+
 
 // 14) Tendo como dados de entrada o peso (em quilogramas) e a altura (em
 //     metros) de uma pessoa, crie um programa que calcule o Índice de
@@ -184,6 +254,22 @@ const readlineSync = require('readline-sync');
 //     - IMC >= 18,5 Kg/m2 e < 24,9 Kg/m2: Peso Ideal
 //     - IMC >= 25 Kg/m2 e < 29,9 Kg/m2: Excesso de Peso
 //     - IMC >= 30 Kg/m2: Obesidade
+
+// let peso = parseInt(readlineSync.question(`Digita o peso em quilogramas: `));
+// let altura = parseFloat(readlineSync.question(`Digita a altura: `));
+// let massaCorporal = peso / (altura * altura);
+// if (massaCorporal < 18.5) {
+//   console.log("Seu IMC e Abaixo do Peso. ");
+// }
+// else if ((massaCorporal >= 18.5) &&  (massaCorporal < 24.9)) {
+//   console.log("Seu IMC e Peso Ideal. ");
+// } 
+// else if ((massaCorporal >= 25) &&  (massaCorporal < 29.9)) {
+//   console.log("Seu IMC e Excesso de Peso. ");
+// } else {
+//   console.log("Seu IMC e Obesidade. ");
+// }
+
 
 // 15) Crie um programa para controlar os saques de um caixa eletrônico que
 // deve possuir algum mecanismo para decidir o número de notas de cada

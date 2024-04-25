@@ -78,3 +78,20 @@ const readlineSync = require('readline-sync');
 
 let dataAtual = new Date();
 console.log(dataAtual);
+
+// 10) Crie um programa que leia o tempo de duração de uma
+// atividade em horas, minutos e segundos e mostre-o expresso
+// em segundos.
+
+// 11) Crie um programa que leia o tempo de duração de uma
+// atividade em segundos e mostre-o expresso em horas,
+// minutos e segundos.
+// 12) Crie um programa que leia o preço de um produto, calcule e
+// mostre o seu preço promocional, com 15% de desconto.
+// 13) Crie um programa que leia o salário de um funcionário,
+// calcule e mostre o seu novo salário, com 27,50% de aumento.
+// 14) Crie um programa que leia o valor da matrícula de um curso,
+// calcule e mostre o seu novo valor, com 20% de desconto.
+// 15) Crie um programa que leia o valor de um boleto que será
+// pago com atraso, a quantidade de dias em atraso, calcule e
+// mostre o seu novo valor com uma taxa de 1,25% ao dia.

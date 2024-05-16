@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eventos JS</title>
+ 
+
+  </head>
+  <body onLoad="evento_onLoad()" onScroll='evento_onScroll()' style="height: 1000px;"> 
+    <main class="tela-principal">
+      <h1 id="titulo" onMouseOver="evento_onMouseOver()">Eventos JS</h1>
+      <section class="conteudo">
+        <article class="box"></article>
+        <article class="box"></article>
+        <hr />
+        <button id="btn1" class="botao">Botão 1</button>
+        <hr />
+        <button id="btn2" class="botao">Botão 2</button>
+        <hr />
+      </section>
+
+      <form action="">
+        <input
+          id="cxtexto"
+          type="text"
+          placeholder="Digite seu nome"
+          onFocus="evento_onFocus()"
+          onFocusOut="evento_onFocusOut()"
+          onKeyPress="evento_onKeyPress()"
+        />
+        <button id="btn3" class="botao" type="submit">Botão 3 - Enviar</button>
+      </form>
+    </main>
+    <script src="scripts.js"></script>
+  </body>
+</html>

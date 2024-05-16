@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eventos JS</title>
- 
+    <link rel="stylesheet" href="syles.css">
 
   </head>
-  <body onLoad="evento_onLoad()" onScroll='evento_onScroll()' style="height: 1000px;"> 
-    <main class="tela-principal">
+  <!-- <body onLoad="evento_onLoad()" onScroll='evento_onScroll()' style="height: 1000px;">  -->
+  <body"> 
+    <!-- <main class="tela-principal" >
       <h1 id="titulo" onMouseOver="evento_onMouseOver()">Eventos JS</h1>
       <section class="conteudo">
         <article class="box"></article>
@@ -32,7 +33,45 @@
         />
         <button id="btn3" class="botao" type="submit">Botão 3 - Enviar</button>
       </form>
-    </main>
+    </main> -->
+    <div class="exercicios exercicio2">
+      <h1>Formulário de Cadastro</h1>
+    <form id="formulario">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        <br>
+
+        <label for="sobrenome">Sobrenome:</label>
+        <input type="text" id="sobrenome" name="sobrenome" required>
+        <br>
+
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" name="cpf" required>
+        <br>
+
+        <label for="sexo">Sexo:</label>
+        <select id="sexo" name="sexo" required>
+            <option value="M">Masculino</option>
+            <option value="F">Feminino</option>
+            <option value="O">Outros</option>
+        </select>
+        <br>
+
+        <label for="dataNascimento">Data de Nascimento:</label>
+        <input type="text" id="dataNascimento" name="dataNascimento" placeholder="DD/MM/AAAA" required>
+        <br>
+
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" name="endereco" required>
+        <br>
+
+        <label for="telefone">Telefone:</label>
+        <input type="text" id="telefone" name="telefone" placeholder="(DD) 9 9999-9999" required>
+        <br>
+
+        <button onclick="formulario() ">Enviar</button>
+    </form>
+    </div>
     <script src="scripts.js"></script>
   </body>
 </html>

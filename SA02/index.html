@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadoras</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="#" onclick="exibirCalculadoraBasica()">Calculadora Básica</a></li>
+            <li><a href="#" onclick="exibirCalculadoraIMC()">Calculadora de IMC</a></li>
+            <li><a href="#" onclick="exibirCalculadoraCombustivel()">Calculadora de Combustível</a></li>
+        </ul>
+    </div>
+
+    <div id="calculadoraBasica" class="calculadora">
+        <!-- Formulário da calculadora básica -->
+        <h2>Calculadora Básica</h2>
+        <form onsubmit="return false;" class="containerForm">
+            <input type="number" id="num1" placeholder="Primeiro número" required>
+            <input type="number" id="num2" placeholder="Segundo número" required>
+            <div class="operacoes">
+                <button class="operacao" onclick="calcularOperacao('soma')">+</button>
+                <button class="operacao" onclick="calcularOperacao('subtracao')">-</button>
+                <button class="operacao" onclick="calcularOperacao('multiplicacao')">x</button>
+                <button class="operacao" onclick="calcularOperacao('divisao')">÷</button>
+                <button class="operacao" onclick="limparOperacao()">Limpar</button>
+            </div>
+            <div id="resultado" class="resultado"></div> <!-- Aqui será exibido o resultado -->
+        </form>
+    </div>
+
+    <div id="calculadoraIMC" class="calculadora" >
+        <!-- Formulário da calculadora de IMC -->
+        <h2>Calculadora IMC</h2>
+        <form onsubmit="return false;"  class="containerForm">
+            <input type="number" id="altura" placeholder="Altura (m)" step="0.01" required>
+            <input type="number" id="peso" placeholder="Peso (kg)" required>
+            <div class="operacoes">
+                <button onclick="calcularIMC()">Calcular IMC</button>
+            </div>
+            <div id="resultadoIMC" class="resultado"></div> <!-- Aqui será exibido o resultado do IMC -->
+        </form>
+    </div>
+
+    <div id="calculadoraCombustivel" class="calculadora" >
+        <!-- Formulário da calculadora de combustível -->
+        <h2>Calculadora de Combustível</h2>
+        <form onsubmit="return false;" class="containerForm">
+            <label for="consumo">Consumo do veículo (km/litro):</label>
+            <input type="number" id="consumo" step="1.00" required>
+            <label for="precoGasolina">Preço da gasolina por litro:</label>
+            <input type="number" id="precoGasolina" step="1.00" required>
+            <label for="precoAlcool">Preço do álcool por litro:</label>
+            <input type="number" id="precoAlcool" step="1.00" required>
+            <div class="operacoes">
+                <button class="operacao"onclick="calcularCombustivel()">Calcular</button>
+                <button class="operacao" onclick="limparCombustivel()">Limpar</button>
+            </div>
+            <div id="resultadoCombustivel" class="resultado"></div> <!-- Aqui será exibido o resultado do cálculo -->
+        </form>
+    
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

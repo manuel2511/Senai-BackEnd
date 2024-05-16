@@ -8,7 +8,7 @@
  
 
 /*
-*/
+
 // Declaração de uma função chamada evento_onLoad, que será chamada quando a página terminar de carregar
 function evento_onLoad() {
   console.log("Executado evento onLoad()!");
@@ -47,7 +47,7 @@ function evento_onKeyPress() {
 
 
 
-
+*/
 /*
 
   Adicionando EventListeners:
@@ -61,9 +61,8 @@ function evento_onKeyPress() {
   Isso possibilita que você adicione interatividade à sua página da web, respondendo dinamicamente às ações do usuário.
 
 */
-
 /*
-*/
+
 // Seleciona os botões da página e os armazena em variáveis.
 let botao1 = document.querySelector("#btn1");
 let botao2 = document.querySelector("#btn2");
@@ -101,6 +100,7 @@ botaoEnviar.addEventListener("click", function (event) {
   console.log("Click no botão 3 - Enviar!");
 });
 
+*/
 
 /*
 
@@ -117,10 +117,59 @@ Classifique o IMC da seguinte forma:
 - IMC >= 30 Kg/m² e < 34.9 Kg/m²: Obesidade Grau I
 - IMC >= 35 Kg/m² e < 39.9 Kg/m²: Obesidade Grau II
 - IMC >= 39.9 Kg/m²: Obesidade Grau III  
+*/
 
+
+/*
 2. Utilizando objeto: Crie um programa que leia os dados de um usuário: 
     nome, sobrenome, CPF, sexo, data de nascimento, endereço e telefone e exiba no console.
+*/
 
+function validarCPF(cpf) {
+  if (cpf.length === 11) {
+      return true; 
+  } 
+}
+function validarTelefone(telefone) {
+  if (/^(\(\d{3})\)\s(\d)\s(\d{4})-(\d{4})$/.test(telefone)) {
+      return true; 
+  } 
+}
+function validarSexo(sexo) {
+  if ( /^[MFO]$/i.test(sexo)) {
+      return true; 
+  } 
+}
+function formatarTelefone(telefone) {
+  if (`(${telefone.substring(0, 3)}) ${telefone.charAt(3)} ${telefone.substring(4, 9)}-${telefone.substring(9)}`) {
+    return true;
+  } 
+}
+
+            
+function formulario() {
+   let nome = document.getElementById("nome").value ;
+   let sobrenome = document.getElementById("sobrenome").value ;
+   let cpf;
+   do {
+     cpf = document.getElementById("cpf").value ;
+   } while (!validarCPF(cpf));
+   let sexo;
+   do {
+     sexo = document.getElementById("sexo").value ;
+   } while (!validarSexo(sexo));
+   
+   let dataNascimento = document.getElementById("dataNascimento").value ;
+   let endereco = document.getElementById("endereco").value ;
+   let telefone;
+   do {
+     telefone = document.getElementById("telefone").value ;
+   } while (!validarTelefone(telefone));
+   console.log("Nome" + nome);
+   console.log("Sobrenome" + sobrenome);
+   
+}
+  /*
 3. Utilizando objeto: Crie um programa que leia os dados de um aluno: nome, matrícula,
      disciplina, nota. 
    - Se a nota do aluno for maior ou igual a 60 exiba no console “Aprovado”.
@@ -128,16 +177,20 @@ Classifique o IMC da seguinte forma:
    exiba no console “Em recuperação” 
    - Se a nota do aluno for menor que 50 exiba no console “Reprovado”.
    criar nova propriedade chamada situacao para o aluno.
-  
-4. Utilizando função: Crie um programa que leia um valor inicial A e exiba a sequência de valores do cálculo de A! e o seu resultado. 
-	Ex: 5! = 5 X 4 X 3 X 2 X 1 = 120 
-
-5. Utilizando função: Crie um programa que leia a largura e o comprimento de um terreno 
-retangular, calculando e mostrando a sua área em m² (largura x comprimento). 
-O programa também deve mostrar a classificação desse terreno, de acordo com a lista abaixo: 
-- Abaixo de 100m² = TERRENO POPULAR 
-- Entre 100m² e 500m² = TERRENO MASTER 
-- Acima de 500m² = TERRENO VIP
-
-
-*/
+   
+   
+   
+   4. Utilizando função: Crie um programa que leia um valor inicial A e exiba a sequência de valores do cálculo de A! e o seu resultado. 
+   Ex: 5! = 5 X 4 X 3 X 2 X 1 = 120 
+   
+   
+   
+   
+   5. Utilizando função: Crie um programa que leia a largura e o comprimento de um terreno 
+   retangular, calculando e mostrando a sua área em m² (largura x comprimento). 
+   O programa também deve mostrar a classificação desse terreno, de acordo com a lista abaixo: 
+   - Abaixo de 100m² = TERRENO POPULAR 
+   - Entre 100m² e 500m² = TERRENO MASTER 
+   - Acima de 500m² = TERRENO VIP
+   
+   */

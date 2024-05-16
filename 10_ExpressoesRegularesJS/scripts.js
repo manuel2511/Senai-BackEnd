@@ -1046,7 +1046,7 @@ imprimirLista(pessoasMasculino);
 // Pessoas do sexo feminino
 let pessoasFeminino = pessoas.filter(pessoa => pessoa.sexo === 'F');
 console.log("Pessoas do sexo feminino:", pessoasFeminino);
-imprimirLista(pessoasFeminino);
+imprimirLista(pessoasFeminino);=
 // Pessoas que preferiram não dizer o sexo ou marcaram outros
 let pessoasOutrosSexo = pessoas.filter(pessoa => pessoa.sexo === 'P' || pessoa.sexo === 'O');
 console.log("Pessoas que preferiram não dizer o sexo ou marcaram outros:");

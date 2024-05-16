@@ -1,4 +1,27 @@
+function exibirCalculadoraBasica() {
+    //Para setar os menus
+       document.getElementById("calculadoraBasica").style.display = "flex";
+       document.getElementById("calculadoraIMC").style.display = "none";
+       document.getElementById("calculadoraCombustivel").style.display = "none";
+}
+
+function exibirCalculadoraIMC() {
+    //Para setar os menus
+    document.getElementById("calculadoraBasica").style.display = "none";
+    document.getElementById("calculadoraIMC").style.display = "flex";
+    document.getElementById("calculadoraCombustivel").style.display = "none";
+}
+
+function exibirCalculadoraCombustivel() {
+    //Para setar os menus
+    document.getElementById("calculadoraBasica").style.display = "none";
+    document.getElementById("calculadoraIMC").style.display = "none";
+    document.getElementById("calculadoraCombustivel").style.display = "flex";
+}
+
+
 function calcularOperacao(operacao) {
+ 
     // Obtém os valores dos campos de entrada
     let num1 = parseFloat(document.getElementById("num1").value);
     let num2 = parseFloat(document.getElementById("num2").value);
@@ -45,6 +68,7 @@ function limparOperacao(){
     document.getElementById("num2").value = "";
 }
 function calcularIMC() {
+
     // Obtém os valores dos campos de entrada
     let altura = parseFloat(document.getElementById("altura").value);
     let peso = parseFloat(document.getElementById("peso").value);
@@ -74,6 +98,8 @@ function calcularIMC() {
     let resultado = "Seu IMC é: " + imc.toFixed(2) + " sua classificação é:  "+ classificacao; // Arredonda o resultado para 2 casas decimais
     document.getElementById("resultadoIMC").textContent = resultado;
 }
+
+
 function calcularCombustivel() {
     // Obtém os valores dos campos de entrada
     let consumo = parseFloat(document.getElementById("consumo").value);

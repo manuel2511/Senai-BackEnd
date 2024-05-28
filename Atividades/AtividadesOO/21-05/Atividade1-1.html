@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Pets</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Cadastro de Pets</h1>
+        <form id="cadastroForm">
+            <div class="card mt-3">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="animal">Tipo de Animal:</label>
+                        <select id="animal" class="form-control" required>
+                            <option value="Cachorro">Cachorro</option>
+                            <option value="Gato">Gato</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="nome">Nome do Pet:</label>
+                        <input type="text" class="form-control" id="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sexo">Sexo do Pet:</label>
+                        <input type="text" class="form-control" id="sexo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nomeDono">Nome do Dono:</label>
+                        <input type="text" class="form-control" id="nomeDono" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefoneDono">Telefone do Dono:</label>
+                        <input type="text" class="form-control" id="telefoneDono" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="raca">Raça:</label>
+                        <input type="text" class="form-control" id="raca" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cor">Cor do Pet:</label>
+                        <input type="text" class="form-control" id="cor" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="idade">Idade do Pet:</label>
+                        <input type="number" class="form-control" id="idade" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="peso">Peso do Pet (kg):</label>
+                        <input type="number" step="0.1" class="form-control" id="peso" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="altura">Altura do Pet (cm):</label>
+                        <input type="number" step="0.1" class="form-control" id="altura" required>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <button type="button" class="btn btn-primary" onclick="cadastrarPets()">Cadastrar</button>
+            </div>
+        </form>
+        <div class="mt-5">
+            <div id="tabelaPets" class="table-responsive"></div>
+        </div>
+    </div>
+    <script src="Atividade1-1.js"></script>
+</body>
+</html>

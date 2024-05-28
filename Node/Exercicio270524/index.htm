@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserir um texto no html</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body class="m-5">
+    <div class="mb-3">
+        <label for="TextArea" class="form-label">Texto para gravar no arquivo</label>
+        <textarea class="form-control" id="TextArea" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary mb-3" onclick="inserirTexto()">Inserir</button>
+    <script /*src="script.js"*/>
+        function inserirTexto(){
+    let fs = require('fs');
+    const data = 'Este texto que está sendo escrito no node!';
+    // const data = document.getElementById("TextArea").value;
+
+    fs.writeFile('arquivo.txt', data, 'utf8', (erro) =>{
+        if (erro) {
+            console.log('Erro na escrita do arquivo: ' + erro);
+            return;
+        }
+        console.log('Aquivo escrito com sucesso!');
+    });
+
+    fs.readFile('arquivo.txt', 'utf8', (erro, texto) => {
+        if (erro) {
+            console.log('Erro na leitura do arquivo: ' + erro);
+            return;
+        } else {
+            console.log(texto);
+        }
+    })
+    console.log('Entrou aqui');
+}
+    </script>
+</body>
+</html>

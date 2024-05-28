@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Formulário de Cadastro de Usuário</h1>
-    <form id="formulario" onsubmit="exibirUsuario(event)">
+    <form id="formulario" >
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required>
 
@@ -34,7 +34,7 @@
         <label for="telefone">Telefone:</label>
         <input type="tel" id="telefone" name="telefone" pattern="\d{2}\d{5}\d{4}" placeholder="(12) 12345-6789" required>
 
-        <button onclick="">Enviar</button>
+        <button onclick="cadastrar()">Enviar</button>
     </form>
 
     <div id="gridUsuario" class="grid">

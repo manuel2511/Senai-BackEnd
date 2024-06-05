@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Fornecedor</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+
+  <body class="m-5">
+    <div class="container">
+      <h1 class="mb-4">Cadastro de Fornecedores</h1>
+      <div class="mb-3">
+        <label for="numeroFornecedores" class="form-label"
+          >Número de Fornecedores</label
+        >
+        <input
+          type="number"
+          class="form-control"
+          id="numeroFornecedores"
+          min="1"
+        />
+      </div>
+      <button id="cadastrarFornecedores" class="btn btn-primary">
+        Cadastrar Fornecedores
+      </button>
+      <div id="fornecedoresContainer" class="mt-4"></div>
+    </div>
+    <!-- JavaScript -->
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

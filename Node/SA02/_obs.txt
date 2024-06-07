@@ -1,0 +1,49 @@
+
+Em caso de problemas com o acesso ao banco de dados,
+executar o codigo abaixo no mysql:
+    
+    alter user 'root'@'localhost' identified 
+    with mysql_native_password by 'admin'
+
+
+Exemplos de job:
+
+{ "id": 1, "nome": "Desenvolvedor Back End", "salario": 1500 }
+{ "id": 2, "nome": "Desenvolvedor Front End", "salario": 1500 }
+{ "id": 3, "nome": "Desenvolvedor Full Stack", "salario": 2000 }
+
+
+Script mysql
+--Selecionar todos os registros
+SELECT * FROM db_tarefa.tarefa;
+
+
+--Inserir tarefas
+insert into tarefa (id,descricao_tarefa,situacaoAtual_tarefa,dataAbertura_tarefa)
+values (1,'Prototipar Produtos','NaoIniciada' ,CURRENT_TIMESTAMP);
+
+insert into tarefa (id,descricao_tarefa,situacaoAtual_tarefa,dataAbertura_tarefa) 
+values (2,'Ajustar BackLog','Iniciada', CURRENT_TIMESTAMP);
+
+insert into tarefa (id,descricao_tarefa,situacaoAtual_tarefa,dataAbertura_tarefa) 
+values (3,'Ajustar Scripts','Concluida', CURRENT_TIMESTAMP);
+
+
+## Inserir registro 
+
+{
+    "id": 4,
+    "descricao_tarefa": "Documentar código",
+    "situacaoAtual_tarefa": "NaoIniciada",
+    "dataAbertura_tarefa": "2024-06-07",
+    "dataConcusao_tarefa": null
+  }
+## Alteradndo  registro 
+
+{
+    "id": 4,
+    "descricao_tarefa": "Documentar código",
+    "situacaoAtual_tarefa": "Concluida",
+    "dataAbertura_tarefa": "2024-06-07",
+    "dataConcusao_tarefa": "2024-06-07"
+  }

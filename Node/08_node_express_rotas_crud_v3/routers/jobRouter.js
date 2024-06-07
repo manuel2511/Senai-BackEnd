@@ -1,8 +1,7 @@
 const Router = require("express").Router;
 const router = Router();
-
 const jobController = require("../controller/jobController.js");
-const { create } = require("../models/jobModels.js");
+const jobModels = require("../models/jobModels.js");
 
 router.get(
     "/job",

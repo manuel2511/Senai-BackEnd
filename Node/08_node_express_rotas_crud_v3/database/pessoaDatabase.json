@@ -1,0 +1,6 @@
+[
+    {"id": 1, "nome": "João", "idade": 20,"casado": true},
+    {"id": 2, "nome": "Marcos", "idade": 55, "casado": true},
+    {"id": 3, "nome": "Jonatan Eugenio", "idade": 20, "casado": false},
+    {"id": 4, "nome": "Maria", "idade": 15, "casado": false},
+]

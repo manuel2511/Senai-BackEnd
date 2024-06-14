@@ -1,0 +1,53 @@
+
+Em caso de problemas com o acesso ao banco de dados,
+executar o codigo abaixo no mysql:
+    
+    alter user 'root'@'localhost' identified 
+    with mysql_native_password by 'admin'
+
+criar o dataBase
+CREATE DATABASE IF NOT EXISTS  db_produto
+
+Criando a tabela
+
+CREATE TABLE `produtos` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(45) NULL,
+  `quantidade` INT NULL,
+  `unidadeDeMedida` ENUM('UN','CT','CX','DZ','PA','PÇ','PT','RL') NULL DEFAULT 'UN',
+  `preco` DECIMAL(12,4) NULL,
+  `dataCadastro` DATE NULL,
+  PRIMARY KEY (`id`)
+);
+
+Script mysql
+--Selecionar todos os registros
+select id,nome,quantidade,unidadeDeMedida,preco,dataCadastro  from produtos;
+
+
+--Inserir tarefas
+INSERT INTO `produtos` VALUES (1, 'macarrao', 1, 'UN', 5.00, '2024-06-10');
+INSERT INTO `produtos` VALUES (2, 'ovo', 10, 'DZ', 10.00, '2024-06-10');
+INSERT INTO `produtos` VALUES (3, 'parafusi', 100, 'CT', 5.00, '2024-06-10');
+
+
+## Inserir registro 
+
+  {
+    "id": 4,
+    "nome": "fuba",
+    "quantidade": 50,
+    "unidadeDeMedida": "PA",
+    "preco": 3.5,
+    "dataCadastro": "2024-06-10"
+  }
+## Alteradndo  registro 
+
+   {
+    "id": 3,
+    "nome": "parafuso",
+    "quantidade": 1000,
+    "unidadeDeMedida": "UN",
+    "preco": 1,
+    "dataCadastro": "2024-06-10"
+  }

@@ -1,4 +1,3 @@
-const mysql = require("mysql");
 const dbConnection = require("../db/dbConnection");
 class tarefaModel {
   executeSQL(sql, parameters = "") {
@@ -46,12 +45,40 @@ class tarefaModel {
   // ----------------------------------------------------------------------------------------------
 
   readList() {
-    const sql = "SELECT t.descricao,s.descricao,t.dataCadastro, t.dataFinalizado FROM tarefas t INNER JOIN status s on (s.id = t.status_id)"; 
-    return this.executeSQL(sql); 
-  }
+    const sql = `
+        SELECT 
+            t.id, 
+            t.descricao AS descricao, 
+            s.descricao AS status, 
+            DATE_FORMAT(t.dataCadastro, '%d/%m/%Y') AS dataCadastro, 
+            DATE_FORMAT(t.dataFinalizado, '%d/%m/%Y') AS dataFinalizado 
+        FROM 
+            tarefas t 
+        INNER JOIN 
+            status s 
+        ON 
+            s.id = t.status_id
+    `;
+    return this.executeSQL(sql);
+}
 
   read(id) {
-    const sql = "SELECT t.descricao,s.descricao,t.dataCadastro, t.dataFinalizado FROM tarefas t INNER JOIN status s on (s.id = t.status_id) WHERE id = ?"; 
+    const sql =`
+        SELECT 
+            t.id, 
+            t.descricao AS descricao, 
+            s.descricao AS status, 
+            DATE_FORMAT(t.dataCadastro, '%d/%m/%Y') AS dataCadastro, 
+            DATE_FORMAT(t.dataFinalizado, '%d/%m/%Y') AS dataFinalizado 
+        FROM 
+            tarefas t 
+        INNER JOIN 
+            status s 
+        ON 
+            s.id = t.status_id
+         WHERE id = ?
+    `; 
+  
     return this.executeSQL(sql, id); 
   }
 
@@ -71,5 +98,27 @@ class tarefaModel {
     const sql = "DELETE FROM tarefas WHERE id = ?"; 
     return this.executeSQL(sql, id); 
   }
+  search(pesquisa) {
+    const sql = `
+        SELECT 
+            t.id, 
+            t.descricao AS descricao, 
+            s.descricao AS status, 
+            DATE_FORMAT(t.dataCadastro, '%d/%m/%Y') AS dataCadastro, 
+            DATE_FORMAT(t.dataFinalizado, '%d/%m/%Y') AS dataFinalizado 
+        FROM 
+            tarefas t 
+        INNER JOIN status s ON s.id = t.status_id
+        WHERE 
+            t.id = ? OR                                                                                 
+            t.descricao LIKE ? OR 
+            s.descricao LIKE ? OR 
+            DATE_FORMAT(t.dataCadastro, '%d/%m/%Y') LIKE ? OR 
+            DATE_FORMAT(t.dataFinalizado, '%d/%m/%Y') LIKE ?
+    `;
+    return this.executeSQL(sql, [pesquisa,pesquisa,pesquisa,pesquisa,pesquisa]);    
+}
+
+
 }
 module.exports = new tarefaModel();

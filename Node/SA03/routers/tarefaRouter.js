@@ -25,9 +25,7 @@ router.get("/", tarefaController.viewHomePage);
 router.post("/tarefa", tarefaController.create);
 router.post("/tarefa/:id", tarefaController.update);
 router.get("/tarefa/delete/:id", tarefaController.delete);
-
-
-
+router.post("/tarefa.search", tarefaController.search);
 
 
 module.exports = router;

@@ -1,4 +1,4 @@
-const tarefaModel = require("../models/tarefaModels.js");
+const tarefaModel = require("../models/tarefaModel.js");
 
 class tarefaController{
    apiReadList(req, res) {
@@ -70,8 +70,8 @@ class tarefaController{
     return tarefaList
       .then((result) =>
         result.length == 0
-          ? res.status(404).render("./tarefa/tarefa_read", { title: "Listar Tarefa", pessoas: result })
-          : res.status(200).render("./tarefa/tarefa_read", { title: "Listar Tarefa", pessoas: result })
+          ? res.status(404).render("./tarefa/tarefa_read", { title: "Listar Tarefa", tarefa: result, search: '' })
+          : res.status(200).render("./tarefa/tarefa_read", { title: "Listar Tarefa", tarefa: result , search: '' })
       )
       .catch((error) => res.status(400).send(error.message));  
   }
@@ -103,7 +103,7 @@ class tarefaController{
             icone: 'fa-check',
             modalTitle: 'Cadastro Inserido',
             message: `Pessoa cadastrada com sucesso!`,
-            redirectUrl: '/pessoa'
+            redirectUrl: '/tarefa'
         });
     })
       .catch((error) => res.status(400).send(error.message));    
@@ -127,8 +127,8 @@ class tarefaController{
 }
   delete(req, res) {
     const { id } = req.params;
-    const pessoa = tarefaModel.delete(id);
-    return pessoa
+    const tarefa = tarefaModel.delete(id);
+    return tarefa
       // .then((result) => res.status(200).send("<script> alert('Pessoa excluída com sucesso!'); window.location='../../pessoa' </script>"))
       .then((result) => {
         res.status(200).render('modal', {
@@ -143,6 +143,17 @@ class tarefaController{
       .catch((error) => res.status(400).send(error.message));  
   }
 
+    search(req, res) {
+      const pesquisa  = '%' + req.body.search + '%';
+      const tarefasList = tarefaModel.search(pesquisa);
+      return tarefasList
+        .then((result) =>
+          result.length == 0
+            ? res.status(404).render("./tarefa/tarefa_read", { title: "Tarefa", tarefas: result, search: req.body.search })
+            : res.status(200).render("./tarefa/tarefa_read", { title: "Tarefa", tarefas: result, search: req.body.search })
+        )
+        .catch((error) => res.status(400).send(error.message));  
+    }
 
 }
 
